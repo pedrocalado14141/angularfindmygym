@@ -58,7 +58,7 @@ export class GetgymComponent implements OnInit {
     this.refreshGymList();
   }
 
-  //Fill the form with the itemtoUpdate from the for in the table 
+  //populate this.GymFunctions with the itemtoUpdate from the *ngfor in the table 
   updateClick(itemtoUpdate: any){
     console.log("updateClick()")
     this.GymFunctions = itemtoUpdate
