@@ -1,0 +1,62 @@
+<p>getgym works!</p>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="addClick()" >
+  Add Department
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{ModalTitle}}</h5>
+        <button type="button" class="close" data-dismiss="modal" (click)="closeClick()"  aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-addeditgym [GymFunctions] = "GymFunctions" *ngIf="ActivateAddEditGym">
+
+        </app-addeditgym>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">gínasio</th>
+        <th scope="col">Morada</th>
+        <th scope="col">Latitude</th>
+        <th scope="col">Longitude</th>
+        <th scope="col">Contact</th>
+        <th scope="col">Email</th>
+        <th scope="col">Facebook</th>
+        <th scope="col">Opçoes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dataItem of GymList"> 
+        <th scope="row">{{dataItem.id}}</th>
+        <td>{{dataItem.name}}</td>
+        <td>{{dataItem.adress}}</td>
+        <td>{{dataItem.latitude}}</td>
+        <td>{{dataItem.longitude}}</td>
+        <td>{{dataItem.contact}}</td>
+        <td>{{dataItem.email}}</td>
+        <td>{{dataItem.facebook}}</td>
+        <td>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="updateClick(dataItem)" >
+            Update gym
+          </button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="deleteClick(dataItem)" >
+            Delete gym
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
