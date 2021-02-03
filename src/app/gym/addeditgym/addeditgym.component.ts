@@ -23,7 +23,8 @@ export class AddeditgymComponent implements OnInit {
   Email:string="";
   Facebook:string="";
 
-  //used in the Update Method to fill the textbox
+  //First thing when add.edit html is render
+  // its used in the Add/Update Method to fill the textbox
   ngOnInit(): void {
     this.Id = this.GymFunctions.id;
     this.Name = this.GymFunctions.name;
@@ -35,6 +36,7 @@ export class AddeditgymComponent implements OnInit {
     this.Facebook = this.GymFunctions.facebook;
   }
 
+  //When click in add button 
   Addgym(){
   let array = [{
     "id":0,
@@ -53,7 +55,7 @@ export class AddeditgymComponent implements OnInit {
       alert(`O ginásio inserido ficou associado ao id: ${res}`)
       );
   }
-
+//When click in Update button 
   Updategym(){
     let array = {
       "id":  this.Id,
