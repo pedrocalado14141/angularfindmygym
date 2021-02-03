@@ -11,8 +11,7 @@ export class AddeditgymComponent implements OnInit {
   constructor(private service:SharedService) { }
 
   @Input() 
-  //Inizialize the variable
-  
+  //Inizialize the variable to use in the form
   GymFunctions:any; 
   Id=0;
   Name:string="";
