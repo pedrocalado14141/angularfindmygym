@@ -5,6 +5,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from "src/app/shared.service";
+import { HighlightSpanKind } from 'typescript';
 
 @Component({
   selector: 'app-getgym',
@@ -30,9 +31,10 @@ export class GetgymComponent implements OnInit {
   }
 
   refreshGymList(){
-    this.service.GetGymList().subscribe(data => {
-      this.GymList=data;
-    })
+    this.service.GetGymList().subscribe(
+      data => this.GymList = data,
+    error => alert(error.error
+      ))
   }
 
   //Open the Modal, set the variable to empty and id:0 to Add  new gym
@@ -67,7 +69,7 @@ export class GetgymComponent implements OnInit {
   }
 
   deleteClick(itemtoUpdate: any){
-    this.service.DeleteGym(itemtoUpdate.id,"teste").subscribe(res=> 
+    this.service.DeleteGym(itemtoUpdate.id).subscribe(res=> 
       alert(res))
   }
 }

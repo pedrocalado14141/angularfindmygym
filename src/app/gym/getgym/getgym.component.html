@@ -30,7 +30,7 @@
       <tr>
         <th scope="col">Id</th>
         <th scope="col">gínasio</th>
-        <th scope="col">Morada</th>
+        <th scope="col">Endereço</th>
         <th scope="col">Latitude</th>
         <th scope="col">Longitude</th>
         <th scope="col">Contact</th>
@@ -41,8 +41,8 @@
     </thead>
     <tbody>
       <tr *ngFor="let dataItem of GymList"> 
-        <th scope="row">{{dataItem.id}}</th>
-        <td>{{dataItem.name}}</td>
+        <th scope="row">{{dataItem.gymId}}</th>
+        <td>{{dataItem.gymName}}</td>
         <td>{{dataItem.adress}}</td>
         <td>{{dataItem.latitude}}</td>
         <td>{{dataItem.longitude}}</td>

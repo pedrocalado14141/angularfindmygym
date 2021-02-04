@@ -36,9 +36,9 @@ export class SharedService {
     let PathParameterId = `/Gym/${val.id}`;
     return this.http.put<any>(this.URL+PathParameterId,val)
   }
-  DeleteGym(id: any, teste:any){
+  DeleteGym(id: any){
     alert('Request DeleteGym is sent!');
     let PathParameterId = `/Gym/${id}`;
-    return this.http.delete<any>(this.URL+PathParameterId, teste)
+    return this.http.delete<any>(this.URL+PathParameterId)
   }
 }

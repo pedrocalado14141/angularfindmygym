@@ -25,8 +25,8 @@ export class AddeditgymComponent implements OnInit {
   //First thing when add.edit html is render
   // its used in the Add/Update Method to fill the textbox
   ngOnInit(): void {
-    this.Id = this.GymFunctions.id;
-    this.Name = this.GymFunctions.name;
+    this.Id = this.GymFunctions.gymId;
+    this.Name = this.GymFunctions.gymName;
     this.Latitude = this.GymFunctions.latitude;
     this.Longitude = this.GymFunctions.longitude;
     this.Adress = this.GymFunctions.adress;
